@@ -13,13 +13,14 @@ const adicionarJogador = (nome) => {
 
 const removerJogador = (nome) => {
   jogadores.value = jogadores.value.filter(jogador => jogador !== nome);
+  console.log('cheogu aqui?')
 };
 </script>
 
 <template>
   <main class="main">
     <FormJogador @adicionar-jogador="adicionarJogador" />
-    <Config :jogadores="jogadores" />
+    <Config :jogadores="jogadores" @remover-jogador="removerJogador" />
     <Result :jogadores="jogadores" />
   </main>
 </template>

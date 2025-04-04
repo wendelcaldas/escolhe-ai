@@ -2,7 +2,13 @@
     <div class="column">
       <div class="form-container">
         <p>Adicionar Jogador</p>
-        <input v-model="novoJogador" type="text" placeholder="Nome do jogador" />
+        <input
+            ref="inputJogador" 
+            v-model="novoJogador" 
+            type="text" 
+            placeholder="Nome do jogador"
+            @keyup.enter="adicionarJogador"
+        />
         <button @click="adicionarJogador">Adicionar</button>
   
         <ul v-if="jogadores.length > 0" class="lista-jogadores">
@@ -26,9 +32,13 @@
     methods: {
       adicionarJogador() {
         if (this.novoJogador.trim() !== "") {
-          this.jogadores.push(this.novoJogador.trim());
-          this.$emit("adicionarJogador", this.novoJogador.trim()); // Evento pra mandar pro main
-          this.novoJogador = ""; // Limpa o campo após adicionar
+        const nome = this.novoJogador.trim();
+        this.jogadores.push(nome);
+        this.$emit("adicionarJogador", nome);
+        this.novoJogador = "";
+
+        // foca no input novamente
+        this.$refs.inputJogador.focus();
         }
       },
       removerJogador(index) {
@@ -36,6 +46,9 @@
           const jogadorRemovido = jogadores.value[index];
       },
     },
+    mounted() {
+      this.$refs.inputJogador.focus();
+    }
   };
   </script>
   
