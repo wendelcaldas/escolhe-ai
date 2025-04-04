@@ -9,6 +9,7 @@ const jogadores = ref([]); // Lista centralizada
 const adicionarJogador = (nome) => {
   jogadores.value.push(nome);
   console.log(jogadores.value)
+  console.log('jogadores acima')
 };
 
 const removerJogador = (nome) => {
@@ -19,8 +20,11 @@ const removerJogador = (nome) => {
 
 <template>
   <main class="main">
-    <FormJogador @adicionar-jogador="adicionarJogador" />
-    <Config :jogadores="jogadores" @remover-jogador="removerJogador" />
+    <FormJogador 
+      @adicionar-jogador="adicionarJogador" 
+      @remover-jogador="removerJogador"
+    />
+    <Config :jogadores="jogadores" />
     <Result :jogadores="jogadores" />
   </main>
 </template>

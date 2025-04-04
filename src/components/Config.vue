@@ -8,12 +8,19 @@
             <button>Basquete</button>
         </section>
         <h2 class="config-titulo">Jogadores por Time</h2>
-        <input type="number" name="" id="" min="2" max="11">
-        <ul v-if="jogadores.length > 0">
-        <li v-for="(jogador, index) in jogadores" :key="index">
-          {{ jogador }}
-        </li>
-        </ul>
+        <input type="number" name="" id="num-jogadores" min="2" max="11" value="5">
+        <h2 class="config-titulo">Em caso de não fechar times você prefere:</h2>
+        <div>
+          <label>
+            <input type="radio" name="escolha" value="opcao1" v-model="opcaoSelecionada" />
+            Dividir a sobra entre os times
+          </label>
+      
+          <label>
+            <input type="radio" name="escolha" value="opcao2" v-model="opcaoSelecionada" />
+            Formar um time incompleto
+          </label>
+        </div>
       </div>
     </div>
   </template>
@@ -43,7 +50,8 @@
   .config-titulo{
     font-weight: bold;
     columns: black;
-    margin:30px
+    margin:20px;
+    text-align: center;
   }
   .config-container-button{
     /* background-color: red; */
@@ -60,6 +68,13 @@
   }
   .config-container-button button:hover {
     cursor: pointer;
+  }
+  #num-jogadores{
+    width: 20%;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
   }
   </style>
   

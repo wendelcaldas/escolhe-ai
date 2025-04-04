@@ -37,13 +37,13 @@
         this.$emit("adicionarJogador", nome);
         this.novoJogador = "";
 
-        // foca no input novamente
         this.$refs.inputJogador.focus();
         }
       },
       removerJogador(index) {
-          this.jogadores.splice(index, 1);
-          const jogadorRemovido = jogadores.value[index];
+        const jogadorRemovido = this.jogadores[index];
+        this.jogadores.splice(index, 1);
+        this.$emit("removerJogador", jogadorRemovido); // emite para o pai
       },
     },
     mounted() {
