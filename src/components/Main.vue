@@ -14,7 +14,7 @@ const adicionarJogador = (nome) => {
 
 const removerJogador = (nome) => {
   jogadores.value = jogadores.value.filter(jogador => jogador !== nome);
-  console.log('cheogu aqui?')
+  console.log('teste aqui?')
 };
 </script>
 
