@@ -10,7 +10,7 @@
         <h2 class="config-titulo">Jogadores por Time</h2>
         <input type="number" name="" id="num-jogadores" min="2" max="11" value="5">
         <h2 class="config-titulo">Em caso de não fechar times você prefere:</h2>
-        <div>
+        <div class="container-tipo-time">
           <label>
             <input type="radio" name="escolha" value="opcao1" v-model="opcaoSelecionada" />
             Dividir a sobra entre os times
@@ -75,6 +75,17 @@
     font-size: 24px;
     text-align: center;
     font-weight: bold;
+  }
+  .container-tipo-time{
+    /* background-color: red; */
+    display: flex;
+  }
+  .container-tipo-time label{
+    /* background-color:blue; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    text-align: center;
   }
   </style>
   
