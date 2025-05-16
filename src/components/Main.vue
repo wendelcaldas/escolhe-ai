@@ -24,7 +24,7 @@ const removerJogador = (nome) => {
       @adicionar-jogador="adicionarJogador" 
       @remover-jogador="removerJogador"
     />
-    <Config :jogadores="jogadores" />
+    <Config :jogadores="jogadores" /> 
     <Result :jogadores="jogadores" />
   </main>
 </template>
@@ -32,8 +32,10 @@ const removerJogador = (nome) => {
 <style scoped>
 .main {
   display: flex;
-  width: 90%;
+  width: 100%;
   margin: auto;
-  height: 85vh; /* O resto da altura depois do header */
+  height: 85vh;
+  background-color: white;
+  color: black; /* O resto da altura depois do header */
 }
 </style>

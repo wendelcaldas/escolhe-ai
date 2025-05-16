@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>Escolhe AI - Prototipo</h1>
+    <h1>⚽ Escolhe AI ⚽</h1>
   </header>
 </template>
 
